@@ -1,24 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Cocktails</h1>
-
-<!--   <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead> -->
-
-  <div>
-    <% @cocktails.each do |cocktail| %>
-      <div class="card">
-        <p><%= cocktail.name %></p>
-        <p><%= link_to 'Show', cocktail_path(cocktail) %></p>
-        <p><%= link_to 'Edit', edit_cocktail_path(cocktail) %></p>
-        <p><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
-    <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container">
+    <h1>Cocktails</h1>
+    <h3>Tous vous cocktail ici!</h3>
+    <p>Créer vos cocktails les plus fous! </p>
+  </div>
 </div>
+
+
+  <% @cocktails.each do |cocktail| %>
+    <div class="card">
+      <p><%= cocktail.name %></p>
+      <p><%= link_to 'Show', cocktail_path(cocktail) %></p>
+      <p><%= link_to 'Edit', edit_cocktail_path(cocktail) %></p>
+      <p><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  <% end %>
+
 
 
 <%= link_to 'New Cocktail', new_cocktail_path %>
