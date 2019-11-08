@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @cocktail.name %>
 </p>
+
+<%= cl_image_tag @cocktail.picture, height: 300, width: 400, crop: :fill %>
 
 <div class="doses_list">
   <h5>Ingredients :</h5>

@@ -1,21 +1,21 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
-  <div class="container">
-    <h1>Cocktails</h1>
-    <h3>Tous vous cocktail ici!</h3>
+    <h1>Ti vous cocktail ici!</h1>
     <p>Créer vos cocktails les plus fous! </p>
-  </div>
 </div>
 
-
-  <% @cocktails.each do |cocktail| %>
-    <div class="card">
-      <p><%= cocktail.name %></p>
-      <p><%= link_to 'Show', cocktail_path(cocktail) %></p>
-      <p><%= link_to 'Edit', edit_cocktail_path(cocktail) %></p>
-      <p><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div>
-  <% end %>
-
-
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.back_image, height: 300, width: 400, crop: :fill %>')">
+        <h4><%= cocktail.name %></h4>
+        <div class="card-btn">
+          <%= link_to 'Show', cocktail_path(cocktail) %> |
+          <%= link_to 'Edit', edit_cocktail_path(cocktail) %> |
+          <%= link_to '', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-eraser" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'New Cocktail', new_cocktail_path %>

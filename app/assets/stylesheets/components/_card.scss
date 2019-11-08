@@ -1,0 +1,21 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  width: 1080px;
+}
+
+.card {
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-btn {
+  text-decoration: none;
+  display: flex;
+  text-align: center;
+}
