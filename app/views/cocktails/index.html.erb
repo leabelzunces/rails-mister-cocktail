@@ -9,13 +9,13 @@
     </tr>
   </thead> -->
 
-  <div >
+  <div>
     <% @cocktails.each do |cocktail| %>
       <div class="card">
         <p><%= cocktail.name %></p>
-        <p><%= link_to 'Show', cocktail %></p>
+        <p><%= link_to 'Show', cocktail_path(cocktail) %></p>
         <p><%= link_to 'Edit', edit_cocktail_path(cocktail) %></p>
-        <p><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <p><%= link_to 'Destroy', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </div>
     <% end %>
 </div>
